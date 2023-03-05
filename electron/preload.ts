@@ -1,11 +1,10 @@
 import { contextBridge } from 'electron';
-import * as api from './api';
 
-export interface ElectronApi {
-    test: string;
-}
+import { api } from './api';
 
-const apiHandlers = Object.fromEntries(Object.entries(api).map(([functionName, {handle}]) => [functionName, handle]));
+// Setup the API handlers for when the
+// frontend calls them.
+const apiHandlers = Object.fromEntries(Object.entries(api).map(([functionName, { handle }]) => [functionName, handle]));
 contextBridge.exposeInMainWorld('api', {
-    ...apiHandlers
+    ...apiHandlers,
 });

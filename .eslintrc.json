@@ -17,21 +17,24 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "import",
+        "import-newlines"
     ],
     "rules": {
         "indent": [
             "error",
             4,
-            { "SwitchCase": 1 }
+            {"SwitchCase": 1}
         ],
         "linebreak-style": [
             "error",
-            "unix"
+            "windows"
         ],
         "quotes": [
             "error",
-            "single"
+            "single",
+            {"avoidEscape": true}
         ],
         "semi": [
             "error",
@@ -42,6 +45,62 @@
         ],
         "react/prop-types": [
             0
+        ],
+        "eol-last": [
+            "warn",
+            "always"
+        ],
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "only-multiline"
+            }
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1
+            }
+        ],
+        "arrow-parens": [
+            "error",
+            "as-needed"
+        ],
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "builtin",
+                    "external",
+                    "internal",
+                    "parent",
+                    "sibling",
+                    "index",
+                    "object",
+                    "type"
+                ],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "import-newlines/enforce": [
+            "error",
+            {
+                "items": 3,
+                "max-len": 120,
+                "forceSingleLine": true
+            }
         ]
     },
     "settings": {

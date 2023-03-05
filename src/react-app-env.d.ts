@@ -2,5 +2,7 @@
 /// <reference types="react-scripts" />
 
 declare interface Window {
-    api: any;
+    api: {
+        [Property in keyof API]: API[Property]['handle'];
+    }
 }

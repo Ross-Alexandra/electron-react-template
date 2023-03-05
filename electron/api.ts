@@ -1,10 +1,3 @@
-import { ipcRenderer } from 'electron';
+import * as _api from './api-functions';
 
-export const test = {
-    execute: async () => {
-        return 'API is working!';
-    },
-    handle: async () => {
-        return await ipcRenderer.invoke('test');
-    }
-};
+export const api = (_api as unknown) as Record<string, ApiFunction<unknown[], unknown>>;
